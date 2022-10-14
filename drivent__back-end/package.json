@@ -28,7 +28,7 @@
     "dev:prisma:studio": "npm run dev:load-envs prisma studio",
     "dev:seed": "prisma db seed",
     "dev:docker": "npm run dev:compose -- up",
-    "dev": "NODE_ENV=development nodemon --watch 'src/' --exec 'ts-node -r tsconfig-paths/register ./src/server.ts' -e ts",
+    "dev": "set NODE_ENV=development && nodemon --watch 'src/' --exec \"ts-node -r tsconfig-paths/register ./src/server.ts\" -e ts",
     "ci:build": "docker-compose -f docker-compose.test.yml build",
     "ci:test": "docker-compose -f docker-compose.test.yml run drivent-test bash -c 'npm run test:migration:run && npm test'"
   },
@@ -81,7 +81,7 @@
   "dependencies": {
     "@brazilian-utils/brazilian-utils": "^1.0.0-rc.12",
     "@prisma/client": "^3.14.0",
-    "bcrypt": "^5.0.1",
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dayjs": "^1.11.2",
     "dotenv": "^16.0.1",
